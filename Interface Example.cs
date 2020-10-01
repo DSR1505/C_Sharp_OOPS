@@ -21,7 +21,8 @@ public abstract class Class1 : I2
 {
     
  public    void method1( ){
- Console.WriteLine("I am from interface I1");   
+ Console.WriteLine("I am from interface I1"); 
+ Console.WriteLine("Method 1 from interface I1");
 }
   public void method2( ){
  Console.WriteLine("I am from interface I2");   
