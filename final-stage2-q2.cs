@@ -51,8 +51,31 @@ class Shop
 class ProductBO
     {
         public List<Product> FindProduct(List<Product> productList, string brand)
-            {
+	{
             var res = from p in productList
                       where p.Brand == brand
                       select p;
             return res.ToList();
+	}
+		
+	public List<Product> FindProduct(List<Product> productList, double price)
+        {
+            var res = from p in productList
+                      where p.Price == price
+                      select p;
+            return res.ToList();
+        }
+	
+	public Hashtable BrandWiseCount(List<Product> productList )
+        {       
+           var res= from p in productList
+                      group p by p.Brand into g
+                      select new  { brand=g.Key,count=g.Count() };
+            Hashtable ht1 = new Hashtable();
+            foreach(var x in res)
+            {
+                ht1.Add(x.brand, x.count);
+            }
+            return ht1;
+        }
+	}
