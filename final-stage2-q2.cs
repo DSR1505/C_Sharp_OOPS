@@ -45,4 +45,14 @@ class Shop
                 flag = false;
             return flag;
         }
+	
     }
+
+class ProductBO
+    {
+        public List<Product> FindProduct(List<Product> productList, string brand)
+            {
+            var res = from p in productList
+                      where p.Brand == brand
+                      select p;
+            return res.ToList();
