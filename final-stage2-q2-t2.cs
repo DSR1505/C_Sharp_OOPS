@@ -18,12 +18,12 @@ class Shop
 	public void AddCustomer(Customer c, string type)
 	{
 	if(type==”Normal”)
-		Normal_Customers.Add( c);
+		Normal_Customers.Add(c);
 	else if(type==”Premium”)
-		Premeium_Customers.Add( c );
+		Premeium_Customers.Add(c);
 	}
 	
-	public bool RemoveCustomer( string  id)
+	public bool RemoveCustomer(string  id)
 	{
 		bool flag1=false,   flag2=false;
 		Customer c1 = Normal_Customers.Find( x => x.cid == id);
@@ -35,7 +35,7 @@ class Shop
 		Customer c2 = Premium_Customers.Find( x => x.cid == id);
 		if(c2 != null)
 		{
-			Premium_Customers.Remove(c) ;
+			Premium_Customers.Remove(c2) ;
 			Flag2= true ;
 		}	
 
